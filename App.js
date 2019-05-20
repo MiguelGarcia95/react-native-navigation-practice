@@ -21,6 +21,10 @@ class Test extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Test Screen</Text>
+        <Button
+          title="Go Home"
+          onPress={() => this.props.navigation.navigate('Home')}
+        />
       </View>
     );
   }
