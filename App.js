@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Button} from 'react-native';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>Home Screen</Text>
+        <Text style={styles.welcome}>Home Screen</Text>
+        <Button
+          title="Go to Test"
+          onPress={() => this.props.navigation.navigate('Test')}
+        />
       </View>
     );
   }
@@ -17,8 +20,7 @@ class Test extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>Test Screen</Text>
+        <Text style={styles.welcome}>Test Screen</Text>
       </View>
     );
   }
