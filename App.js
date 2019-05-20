@@ -43,9 +43,14 @@ const styles = StyleSheet.create({
   },
 });
 
-const AppNavigator = createStackNavigator({
-  Home: App,
-  Test: Test
-});
+const AppNavigator = createStackNavigator(
+  {
+    Home: App,
+    Test: Test
+  },
+  {
+    initialRouteName: "Home"
+  }
+);
  
 export default createAppContainer(AppNavigator);
