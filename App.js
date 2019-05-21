@@ -1,34 +1,39 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createStackNavigator, createAppContainer, DrawerNavigator } from "react-navigation";
 
 class App extends Component {
   render() {
     return (
+      <AppStack />
+    );
+  }
+}
+
+const AppStack = DrawerNavigator({
+  home: {screen: Home},
+  dashboard: {screen: Dashboard}
+});
+
+class Home extends Component {
+  render() {
+    return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Home Screen</Text>
-        <Button
-          title="Go to Test"
-          onPress={() => this.props.navigation.navigate('Test')}
-        />
+        <Text style={styles.welcome}>Test Screen</Text>
       </View>
     );
   }
 }
 
-// class Test extends Component {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text style={styles.welcome}>Test Screen</Text>
-//         <Button
-//           title="Go Home"
-//           onPress={() => this.props.navigation.navigate('Home')}
-//         />
-//       </View>
-//     );
-//   }
-// }
+class Dashboard extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>Test Screen</Text>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -48,16 +53,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
-// const AppNavigator = createStackNavigator(
-//   {
-//     Home: App,
-//     Test: Test
-//   },
-//   {
-//     initialRouteName: "Home"
-//   }
-// );
-// export default createAppContainer(AppNavigator);
  
 export default App;
