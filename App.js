@@ -16,19 +16,19 @@ class App extends Component {
   }
 }
 
-class Test extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Test Screen</Text>
-        <Button
-          title="Go Home"
-          onPress={() => this.props.navigation.navigate('Home')}
-        />
-      </View>
-    );
-  }
-}
+// class Test extends Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <Text style={styles.welcome}>Test Screen</Text>
+//         <Button
+//           title="Go Home"
+//           onPress={() => this.props.navigation.navigate('Home')}
+//         />
+//       </View>
+//     );
+//   }
+// }
 
 const styles = StyleSheet.create({
   container: {
@@ -49,14 +49,15 @@ const styles = StyleSheet.create({
   },
 });
 
-const AppNavigator = createStackNavigator(
-  {
-    Home: App,
-    Test: Test
-  },
-  {
-    initialRouteName: "Home"
-  }
-);
+// const AppNavigator = createStackNavigator(
+//   {
+//     Home: App,
+//     Test: Test
+//   },
+//   {
+//     initialRouteName: "Home"
+//   }
+// );
+// export default createAppContainer(AppNavigator);
  
-export default createAppContainer(AppNavigator);
+export default App;
