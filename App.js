@@ -1,19 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
-import { createStackNavigator, createAppContainer, DrawerNavigator } from "react-navigation";
-
-class App extends Component {
-  render() {
-    return (
-      <AppStack />
-    );
-  }
-}
-
-const AppStack = DrawerNavigator({
-  home: {screen: Home},
-  dashboard: {screen: Dashboard}
-});
+import { createDrawerNavigator, createAppContainer} from "react-navigation";
 
 class Home extends Component {
   render() {
@@ -35,6 +22,22 @@ class Dashboard extends Component {
   }
 }
 
+class App extends Component {
+  render() {
+    return (
+      <MyApp />
+    );
+  }
+}
+
+const AppStack = createDrawerNavigator({
+  home: {screen: Home},
+  dashboard: {screen: Dashboard}
+});
+
+const MyApp = createAppContainer(AppStack);
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -53,5 +56,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+
  
 export default App;
